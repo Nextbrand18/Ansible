@@ -1,1 +1,89 @@
 (ansible-playbook --ask-become-pass install_apache.yml)
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.127]
+ok: [192.168.1.126]
+
+TASK [update repo indeex] ******************************************************
+changed: [192.168.1.126]
+changed: [192.168.1.127]
+
+TASK [install apache2 package] *************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+192.168.1.127              : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [update repo indeex] ******************************************************
+changed: [192.168.1.126]
+changed: [192.168.1.127]
+
+TASK [install apache2 package] *************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [add php support for apache] **********************************************
+changed: [192.168.1.126]
+changed: [192.168.1.127]
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+192.168.1.127              : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.127]
+ok: [192.168.1.126]
+
+TASK [update repo indeex] ******************************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+TASK [install apache2 package] *************************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+TASK [add php support for apache] **********************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+192.168.1.127              : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [update repo indeex] ******************************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+TASK [install apache2 package] *************************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+TASK [add php support for apache] **********************************************
+changed: [192.168.1.126]
+changed: [192.168.1.127]
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+192.168.1.127              : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
