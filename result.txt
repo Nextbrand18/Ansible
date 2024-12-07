@@ -87,3 +87,68 @@ PLAY RECAP *********************************************************************
 192.168.1.126              : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 192.168.1.127              : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.127]
+ok: [192.168.1.126]
+
+TASK [update repo index] *******************************************************
+fatal: [192.168.1.126]: FAILED! => {"msg": "The conditional check 'ansible_ditribution  --\"Ubuntu\"' failed. The error was: Unexpected templating type error occurred on ({% if ansible_ditribution  --\"Ubuntu\" %} True {% else %} False {% endif %}): bad operand type for unary -: 'str'. bad operand type for unary -: 'str'\n\nThe error appears to be in '/home/admin01/Ansible/install_apache.yml': line 7, column 5, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n  - name: update repo index\n    ^ here\n"}
+fatal: [192.168.1.127]: FAILED! => {"msg": "The conditional check 'ansible_ditribution  --\"Ubuntu\"' failed. The error was: Unexpected templating type error occurred on ({% if ansible_ditribution  --\"Ubuntu\" %} True {% else %} False {% endif %}): bad operand type for unary -: 'str'. bad operand type for unary -: 'str'\n\nThe error appears to be in '/home/admin01/Ansible/install_apache.yml': line 7, column 5, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n  - name: update repo index\n    ^ here\n"}
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.1.127              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.127]
+ok: [192.168.1.126]
+
+TASK [update repo index] *******************************************************
+fatal: [192.168.1.126]: FAILED! => {"msg": "The conditional check 'ansible_distribution  --\"Ubuntu\"' failed. The error was: Unexpected templating type error occurred on ({% if ansible_distribution  --\"Ubuntu\" %} True {% else %} False {% endif %}): bad operand type for unary -: 'str'. bad operand type for unary -: 'str'\n\nThe error appears to be in '/home/admin01/Ansible/install_apache.yml': line 7, column 5, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n  - name: update repo index\n    ^ here\n"}
+fatal: [192.168.1.127]: FAILED! => {"msg": "The conditional check 'ansible_distribution  --\"Ubuntu\"' failed. The error was: Unexpected templating type error occurred on ({% if ansible_distribution  --\"Ubuntu\" %} True {% else %} False {% endif %}): bad operand type for unary -: 'str'. bad operand type for unary -: 'str'\n\nThe error appears to be in '/home/admin01/Ansible/install_apache.yml': line 7, column 5, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n  - name: update repo index\n    ^ here\n"}
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+192.168.1.127              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [update repo index] *******************************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+TASK [install apache2 package] *************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [add php support for apache] **********************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [update repo index] *******************************************************
+skipping: [192.168.1.126]
+skipping: [192.168.1.127]
+
+TASK [install apache2 package] *************************************************
+skipping: [192.168.1.126]
+skipping: [192.168.1.127]
+
+TASK [add php support for apache] **********************************************
+skipping: [192.168.1.126]
+skipping: [192.168.1.127]
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=4    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+192.168.1.127              : ok=4    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+
