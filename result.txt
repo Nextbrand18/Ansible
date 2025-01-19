@@ -571,3 +571,81 @@ PLAY RECAP *********************************************************************
 192.168.1.126              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
 192.168.1.127              : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
 
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [install updates for Ubuntu] **********************************************
+fatal: [192.168.1.127]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get dist-upgrade ' failed: E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1459 (unattended-upgr)\nE: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?\n", "rc": 100, "stdout": "", "stdout_lines": []}
+changed: [192.168.1.126]
+
+TASK [install updates for CentOS] **********************************************
+skipping: [192.168.1.126]
+
+TASK [copy default html file for site] *****************************************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+fatal: [192.168.1.126]: FAILED! => {"changed": false, "msg": "Could not find or access 'default_site.html'\nSearched in:\n\t/home/admin01/Ansible/files/default_site.html\n\t/home/admin01/Ansible/default_site.html\n\t/home/admin01/Ansible/files/default_site.html\n\t/home/admin01/Ansible/default_site.html on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=2    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+192.168.1.127              : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.127]
+ok: [192.168.1.126]
+
+TASK [install updates for Ubuntu] **********************************************
+ok: [192.168.1.126]
+changed: [192.168.1.127]
+
+TASK [install updates for CentOS] **********************************************
+skipping: [192.168.1.126]
+skipping: [192.168.1.127]
+
+TASK [copy default html file for site] *****************************************
+changed: [192.168.1.127]
+changed: [192.168.1.126]
+
+PLAY [web_servers] *************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [install apache2 package and php package for Ubuntu] **********************
+ok: [192.168.1.126]
+ok: [192.168.1.127]
+
+TASK [install apache2 package and php for CentOS] ******************************
+skipping: [192.168.1.126]
+skipping: [192.168.1.127]
+
+PLAY [db_servers] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.127]
+
+TASK [install mariadb on Ubuntu] ***********************************************
+ok: [192.168.1.127]
+
+TASK [install mariadb CentOS] **************************************************
+skipping: [192.168.1.127]
+
+PLAY [file_servers] ************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [192.168.1.126]
+
+TASK [install samba package all distro] ****************************************
+ok: [192.168.1.126]
+
+PLAY RECAP *********************************************************************
+192.168.1.126              : ok=7    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+192.168.1.127              : ok=7    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+
